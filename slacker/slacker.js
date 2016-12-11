@@ -19,7 +19,7 @@ module.exports = function(RED) {
     this.closing = false;
     this.subscriptions = {};
 
-    this.controller = Botkit.slackbot({debug: false});
+    this.controller = Botkit.slackbot({debug: true});
 
     var node = this;
     this.users = {};
@@ -173,9 +173,9 @@ module.exports = function(RED) {
         return done();
       }
       node.controller.deregister(node, done);
-      
+
     });
-    
+
   }
   RED.nodes.registerType('slack-out',SlackOutNode);
 
@@ -192,7 +192,7 @@ module.exports = function(RED) {
       return;
     }
     this.status({fill:"red",shape:"ring",text:"Disconnected"});
-    
+
     if(!this.events || this.events.length == 0) {
       this.error(RED._("Event types not defined"));
       return;
@@ -221,9 +221,9 @@ module.exports = function(RED) {
         node.controller.unsubscribe(this.events[e], node.id);
       }
       node.controller.deregister(node, done);
-      
+
     });
-    
+
   }
   RED.nodes.registerType('slack-in',SlackInNode);
 
