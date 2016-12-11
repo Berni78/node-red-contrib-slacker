@@ -1,6 +1,6 @@
 {
   "name": "node-red-contrib-slackerattach",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Node RED Slack integration built on top of botkit from howdy.ai",
   "keywords": [
     "node-red",
@@ -18,7 +18,7 @@
   },
   "author": "oskar.hagberg@gmail.com",
   "license": "ISC",
-    "bugs": {
+  "bugs": {
     "url": "https://github.com/technocreatives/node-red-contrib-slacker/issues"
   },
   "homepage": "https://github.com/technocreatives/node-red-contrib-slacker#readme",
