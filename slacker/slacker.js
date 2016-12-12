@@ -184,7 +184,7 @@ module.exports = function(RED) {
 
     this.events = (typeof(n.events) == 'string') ? n.events.split(/\,/g) : [];
     this.log(RED._("Slack in node regestering these events: " + this.events));
-    this.controller = RED.nodes.getNode(n.controller);
+    node.log(RED._("Slack in node regestering these events: " + this.events));
     var node = this;
 
     if(!this.controller) {
