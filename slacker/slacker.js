@@ -184,7 +184,6 @@ module.exports = function(RED) {
 
     this.events = (typeof(n.events) == 'string') ? n.events.split(/\,/g) : [];
     this.log(RED._("Slack in node regestering these events: " + this.events));
-    node.log(RED._("Slack in node regestering these events: " + this.events));
     var node = this;
 
     if(!this.controller) {
@@ -202,6 +201,9 @@ module.exports = function(RED) {
 
     var callback = function(bot, message) {
       message.payload = message.text;
+      this.log(RED._("Slack in node received this event: " + this.events));
+      this.log(RED._("Slack in node received this message: " + JSON.stringify(message)));
+
       node.send(message);
     };
 
