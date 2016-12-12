@@ -87,10 +87,10 @@ module.exports = function(RED) {
       var sub = {
         event: event,
         handler:function(bot,message) {
-          node.log(RED._("Handler for event" + event + " and ref " + ref + " received message: " + message));
+          node.log(RED._("Handler for event" + event + " and ref " + ref + " received message: " + JSON.stringify(message));
           //This is a hack untill i know how to remove a listener on the controller
           if(node.subscriptions[event] && node.subscriptions[event][ref]) {
-            node.log(RED._("Handler for event" + event + " and ref " + ref + " is calling its callback."));
+            node.log(RED._("Handler for event" + event + " and ref " + ref + " is calling its callback function. bot="+bot+" message="+JSON.stringify(message)));
             callback(bot, message);
           } else {
             node.log(RED._("Handler for event" + event + " and ref " + ref + " is not active anymore."));
